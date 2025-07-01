@@ -98,3 +98,17 @@ img {
 .sidebar-arrow.rotated {
     transform: rotate(90deg);
 }
+
+#display {
+    background-color: transparent;
+    height: 100%;
+    left: 190px;
+    position: absolute;
+    width: calc(100% - 190px);
+    transition: left 0.3s, width 0.3s;
+}
+
+#sidebar:not(.active) ~ #display {
+    left: 0;
+    width: 100%;
+}

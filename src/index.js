@@ -3,6 +3,8 @@
 
 
 import './index.css'
+import {Board} from './classes/board.js'
+
 
 const navbar = document.querySelector('#navbar')
 const sidebar = document.querySelector('#sidebar');
@@ -23,5 +25,7 @@ sidebarBoardsBtn.addEventListener('click', () => {
   userBoardsDiv.classList.toggle('collapsed');
   boardsArrow.classList.toggle('rotated');
 });
+
+let exampleBoard = new Board('example');
 
 
