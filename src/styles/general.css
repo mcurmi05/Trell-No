@@ -1,0 +1,26 @@
+body{
+    background-image: url("../../assets/background.jpeg");
+    margin:0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-attachment: fixed;
+    overflow-x:hidden;
+    overflow-y: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    user-select: none;
+}
+
+a {
+    color: inherit;          
+    text-decoration: none;   
+}
+
+img {
+    -webkit-user-drag: none;
+    user-select: none;
+    pointer-events: auto;
+}
+
+
+

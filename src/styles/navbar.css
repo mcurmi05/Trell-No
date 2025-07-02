@@ -1,0 +1,14 @@
+#navbar{
+    background-color: #3c3a3a;
+    height:60px;
+    display:flex;
+}
+
+#sidebar-toggle-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size:40px;
+    margin-left: 10px;
+}
