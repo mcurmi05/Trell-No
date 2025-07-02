@@ -1,4 +1,5 @@
 import { clearDisplay } from '../display.js';
+import { BoardList } from './boardList.js';
 
 class Board{
 
@@ -30,9 +31,17 @@ class Board{
 
         //create the add new list div for this board (displaying it is handled in displayBoard)
         const addNewListDiv = document.createElement('div');
-        this.addNewListDiv = addNewListDiv;
         addNewListDiv.classList.add('add-new-list');
         addNewListDiv.textContent = `+ Add a new list to ${this.name}`;
+        this.addNewListDiv = addNewListDiv;
+
+        addNewListDiv.addEventListener('click', () => {
+            //when the add new task div is clicked, create a new task and add it to the list
+            const listName = prompt('Enter the name of the new list:');
+            const newList = new BoardList(listName, this);
+            this.addList(newList);
+            this.display.appendChild(newList.listDiv);
+        });
     }
 
     displayBoard(){

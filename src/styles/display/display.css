@@ -9,20 +9,19 @@
     justify-content:flex-start;
     gap:30px;
     padding:20px;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
     box-sizing: border-box;
-    margin-left:20px;
+    padding-left:40px;
     
 }
 
 #display::-webkit-scrollbar {
     height: 10px; 
-    margin:-100px;
 }
 
 #display::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1); 
+    background: rgba(0, 0, 0, 0.1); 
     border-radius: 6px;
 }
 

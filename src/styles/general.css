@@ -22,5 +22,10 @@ img {
     pointer-events: auto;
 }
 
+p {
+    display:inline;
+    word-break: break-word;
+}
+
 
 
