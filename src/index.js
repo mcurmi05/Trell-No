@@ -1,6 +1,4 @@
 //Index JS contains javascript that is fundamental to the website:
-  //Sidebar functionality
-
 
 import './/styles/general.css'
 import './/styles/sidebar.css'
