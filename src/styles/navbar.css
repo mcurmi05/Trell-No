@@ -4,11 +4,15 @@
     display:flex;
 }
 
-#sidebar-toggle-button {
+.navbar-button{
     background-color: transparent;
     color: white;
     border: none;
     cursor: pointer;
     font-size:40px;
     margin-left: 10px;
+}
+
+#add-board-button {
+    margin-top:3px;
 }

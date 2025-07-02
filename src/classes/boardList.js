@@ -64,8 +64,10 @@ class BoardList{
         addNewTaskDiv.addEventListener('click', () => {
             //when the add new task div is clicked, create a new task and add it to the list
             const taskDesc = prompt('Enter the description of the new task:');
-            const newTask = new Task(taskDesc, this);
-            this.addTask(newTask);
+            if (taskDesc){
+                const newTask = new Task(taskDesc, this);
+                this.addTask(newTask);
+            }
         });
 
 
