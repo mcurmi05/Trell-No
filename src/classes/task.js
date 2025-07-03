@@ -1,5 +1,7 @@
 import removeIcon from '../../assets/cross-icon.svg';
 
+import {save} from '../saveHandling.js';
+
 class Task {
 
     description;
@@ -19,7 +21,6 @@ class Task {
         descriptionP.textContent = this.description;
         taskDiv.appendChild(descriptionP);
 
-
         const removeButton = document.createElement('img');
         removeButton.src = removeIcon;
         removeButton.classList.add('remove-task-button');
@@ -31,7 +32,10 @@ class Task {
             this.list.tasksContainer.removeChild(this.taskDiv);
             const index = this.list.tasks.indexOf(this);
             this.list.tasks.splice(index, 1);
+            save();
         });
+
+        save();
 
     }
 

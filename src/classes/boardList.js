@@ -1,4 +1,5 @@
 import {Task} from './task.js';
+import { save } from '../saveHandling.js';
 
 import removeIcon from '../../assets/remove.svg';
 
@@ -43,6 +44,7 @@ class BoardList{
             this.display.removeChild(this.listDiv);
             const index = this.board.lists.indexOf(this);
             this.board.lists.splice(index, 1);
+            save();
         });
 
         listDiv.appendChild(topDiv);
@@ -67,12 +69,13 @@ class BoardList{
             if (taskDesc){
                 const newTask = new Task(taskDesc, this);
                 this.addTask(newTask);
+                save();
             }
         });
 
+        save(); 
 
-        
-    }   
+    }
 
     displayList(){
         //display a list by appending its div to the display after adding all its tasks to itself
@@ -87,7 +90,15 @@ class BoardList{
         //push the task to be added to the tasks array
         this.tasks.push(task);
         this.tasksContainer.appendChild(task.taskDiv);
+        save();
     }
+
+    toJSON() {
+    return {
+        name: this.name,
+        tasks: this.tasks.map(task => task.description)
+    };
+}
 
 }
 

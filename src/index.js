@@ -8,6 +8,7 @@ import './/styles/display/boardDisplay.css'
 import './/styles//modal.css'
 
 import {Board} from './classes/board.js'
+import { initFromSave } from './saveHandling.js'
 
 const sidebar = document.querySelector('#sidebar');
 const sidebarToggleBtn = document.querySelector('#sidebar-toggle-button');
@@ -34,6 +35,8 @@ addBoardButton.addEventListener('click', () => {
     new Board(boardName);
   }
 });
+
+initFromSave();
 
 
 

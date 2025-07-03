@@ -1,5 +1,6 @@
 import { clearDisplay } from '../display.js';
 import { BoardList } from './boardList.js';
+import { addNewBoard, removeBoard, save } from '../saveHandling.js';
 import editIcon from '../../assets/edit.svg';
 
 class Board{
@@ -9,7 +10,7 @@ class Board{
     addNewListDiv;
     display = document.querySelector('#display');
 
-    constructor(name){
+    constructor(name, autoAdd = true){
         //set its name
         this.name = name.trim();
 
@@ -31,7 +32,7 @@ class Board{
         editButton.classList.add('edit-button');
         sidebarDiv.appendChild(editButton);
 
-        // Add click event to edit button
+        //add click event to edit button
         editButton.addEventListener('click', (e) => {
             e.stopPropagation(); // this prevents the board from loading when clicking the edit button
             this.showEditModal(sidebarText);
@@ -55,8 +56,13 @@ class Board{
                 const newList = new BoardList(listName, this);
                 this.addList(newList);
                 this.display.appendChild(newList.listDiv);
+                save();
             }
         });
+
+        if (autoAdd) {
+            addNewBoard(this);
+        }
     }
 
     showEditModal(sidebarText) {
@@ -80,6 +86,7 @@ class Board{
         renameButton.addEventListener('click', () => {
             this.renameBoard(sidebarText);
             document.body.removeChild(modalOverlay);
+            save();
         });
         modalContent.appendChild(renameButton);
 
@@ -90,6 +97,7 @@ class Board{
         deleteButton.addEventListener('click', () => {
             this.deleteBoard(sidebarText.parentElement);
             document.body.removeChild(modalOverlay);
+            removeBoard(this);
         });
         modalContent.appendChild(deleteButton);
 
@@ -119,6 +127,7 @@ class Board{
             this.name = newName.trim();
             sidebarText.textContent = this.name;
             this.addNewListDiv.textContent = `+ Add a new list to ${this.name}`;
+            save();
         }
     }
 
@@ -129,6 +138,7 @@ class Board{
             if (this.display.children.length > 0) {
                 clearDisplay();
             }
+            save();
         }
     }
 
@@ -148,7 +158,15 @@ class Board{
     addList(list){
         //push the list to be added to the lists array
         this.lists.push(list);
+        save();
     }
+
+    toJSON() {
+    return {
+        name: this.name,
+        lists: this.lists.map(list => list.toJSON())
+    };
+}
 
 }
 
