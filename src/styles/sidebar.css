@@ -23,12 +23,14 @@
     align-items: center;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight:400;
+    font-size:20px;
     cursor:pointer;
     margin-left:20px;
 }
 
 .specific-board{
     justify-content: space-between;
+    font-size:16px;
 }
 
 .sidebar-div:hover{
@@ -47,6 +49,7 @@
     bottom:80px;
     position: fixed;
     margin-left:35px;
+    font-size:16px;
 }
 
 .specific-board{
@@ -58,6 +61,7 @@
     transition: max-height 0.3s ease;
     overflow-y:auto;
     margin-bottom:400px;
+    
 }
 
 #boards.collapsed {
