@@ -1,6 +1,5 @@
 import removeIcon from '../../assets/cross-icon.svg';
 
-
 class Task {
 
     description;

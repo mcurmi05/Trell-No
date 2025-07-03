@@ -1,6 +1,7 @@
 #display {
     background-color: transparent;
-    height: 100%;
+    height: calc(100vh - 63px);
+    
     left: 230px;
     position: absolute;
     width: calc(100% - 230px);
@@ -10,7 +11,7 @@
     gap:30px;
     padding:20px;
     overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y:hidden;
     box-sizing: border-box;
     padding-left:40px;
 }

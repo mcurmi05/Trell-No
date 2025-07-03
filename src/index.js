@@ -30,7 +30,7 @@ sidebarBoardsBtn.addEventListener('click', () => {
 //clicking the plus button should prompt the user for a board name and create a new board
 addBoardButton.addEventListener('click', () => {
   const boardName = prompt('Enter board name:');
-  if (boardName) {
+  if (boardName && boardName.trim() !== '') {
     new Board(boardName);
   }
 });

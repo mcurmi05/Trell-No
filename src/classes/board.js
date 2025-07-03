@@ -11,15 +11,19 @@ class Board{
 
     constructor(name){
         //set its name
-        this.name = name;
+        this.name = name.trim();
 
         //create the sidebar board div
         const sidebarDiv = document.createElement('div');
-        sidebarDiv.classList.add('sidebar-div')
+        sidebarDiv.classList.add('sidebar-div');
         sidebarDiv.classList.add('specific-board');
         const sidebarText = document.createElement('p');
         sidebarText.textContent = this.name;
         sidebarDiv.appendChild(sidebarText);
+
+        //add the sidebar board div to the sidebar
+        const boardsContainer = document.querySelector('#boards');
+        boardsContainer.appendChild(sidebarDiv);
 
         //create the edit button
         const editButton = document.createElement('img');
@@ -32,10 +36,6 @@ class Board{
             e.stopPropagation(); // this prevents the board from loading when clicking the edit button
             this.showEditModal(sidebarText);
         });
-
-        //add the sidebar board div to the sidebar
-        const boardsContainer = document.querySelector('#boards');
-        boardsContainer.appendChild(sidebarDiv);
 
         //ensure that clicking the sidebar div displays the board
         sidebarDiv.addEventListener('click', () => {
