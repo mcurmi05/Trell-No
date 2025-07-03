@@ -2,6 +2,7 @@
   "name": "trello-clone",
   "version": "1.0.0",
   "main": "webpack.config.js",
+  "homepage": "https://mcurmi05.github.io/Trell-No/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "webpack --mode production",
@@ -19,7 +20,6 @@
     "style-loader": "^4.0.0",
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.2",
-    "homepage": "https://mcurmi05.github.io/Trell-No/"
+    "webpack-dev-server": "^5.2.2"
   }
 }
