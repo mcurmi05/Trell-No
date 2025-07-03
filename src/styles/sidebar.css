@@ -19,11 +19,16 @@
 .sidebar-div{
     display:flex;
     gap: 20px;
+    
+    align-items: center;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight:400;
     cursor:pointer;
-    
     margin-left:20px;
+}
+
+.specific-board{
+    justify-content: space-between;
 }
 
 .sidebar-div:hover{
@@ -89,3 +94,13 @@
     left: 0;
     width: 100%;
 }
+
+
+.edit-button{
+    width:25px;
+    margin-right:20px;
+    position:relative;
+    right:0px;
+
+}
+
