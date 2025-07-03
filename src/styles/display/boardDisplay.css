@@ -8,7 +8,7 @@
     padding:15px;
     width:300px;
     border: 2px solid rgb(95, 94, 94);
-    height:calc(100vh - 100px);
+    height:calc(100vh - 200px);
     display:flex;
     flex-direction: column;
     flex-shrink:0;
